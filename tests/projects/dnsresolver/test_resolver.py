@@ -260,7 +260,7 @@ def test_parse_address_a(addr_length, addr_bytes, addr_human):
     [
         (
             16,
-            b" \x01I\x98\x00\x0c\x10#\x00\x00\x00\x00\x00\x00\x00\x04\xc0",
+            b" \x01I\x98\x00\x0c\x10#\x00\x00\x00\x00\x00\x00\x00\x04",
             "2001:4998:c:1023:0:0:0:4",
         ),
         (
