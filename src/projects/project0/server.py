@@ -9,12 +9,12 @@ PORT = 4300
 
 def format(message: str) -> bytes:
     """Convert (encode) the message to bytes"""
-    raise NotImplementedError
+    return f"Hello, {message}".encode()
 
 
 def parse(data: bytes) -> str:
     """Convert (decode) bytes to a string"""
-    raise NotImplementedError
+    return " ".join(data.decode().split(" ")[4:])
 
 
 def server_loop():
@@ -47,8 +47,7 @@ def main():
         "-d", "--debug", action="store_true", help="Enable logging.DEBUG mode"
     )
     args = arg_parser.parse_args()
-
-    # TODO: Get the *root* logger
+    logger = logging.getLogger("root")
     if args.debug:
         logger.setLevel(logging.DEBUG)
     else:
